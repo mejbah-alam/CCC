@@ -1,0 +1,2739 @@
+% Setting up the document class
+\documentclass[a4paper,14pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{ulem}
+
+% Configuring the listings package for C code
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black}\itshape,
+    numbers=none,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    captionpos=b
+}
+
+% Customizing the table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\itshape}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecnumwidth}{4em}
+
+% Setting up fonts
+\usepackage{utopia}
+
+% Title and author
+\title{C Programming Exercises}
+\author{Compiled by Mejbah}
+\date{May 7, 2025}
+
+% Configuring hyperref to hide link borders
+\hypersetup{
+    hidelinks
+}
+
+\begin{document}
+
+% Generating the title page
+\maketitle
+
+% Adding a table of contents
+\tableofcontents
+
+% Extra newpage causing additional page
+\newpage
+
+% Configuring page headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ Programming Exercises}
+\fancyhead[R]{\thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{}
+
+\setcounter{page}{1}
+
+%Introduction
+\section{Introduction}
+This document provides C programs for 78 programming exercises, covering arithmetic operations, mathematical functions, and conditional logic. Each program includes the source code and a brief description, presented on a separate page for clarity. Users can compile and run these programs using a C compiler (e.g., GCC) to observe the output. The programs are presented in the order specified in the exercise set.
+\newpage
+
+
+\section{Basic Programming Exercises}
+
+
+\subsection{ASCII Value to ASCII Character}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={ASCII Value to ASCII Character}]
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter Any ASCII Value: ");
+    scanf("%d",&n);
+    printf("The ASCII Character is: %c",n);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{ASCII Character to ASCII Value}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={ASCII Character to ASCII Value}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any ASCII Character: ");
+    scanf("%c",&ch);
+    printf("The ASCII Value is: %d",ch);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Lower Case to Upper Case}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Lower Case to Upper Case}]
+#include<stdio.h>
+int main()
+{
+    char lower;
+    printf("Enter Any Lowercase Letter: ");
+    scanf("%c",&lower);
+    printf("The Uppercase Letter: %c",lower-32);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Upper Case to Lower Case}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Upper Case to Lower Case}]
+#include<stdio.h>
+int main()
+{
+    char Upper;
+    printf("Enter Any Uppercase Letter: ");
+    scanf("%c",&Upper);
+    printf("The Lowercase Letter: %c",Upper+32);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Lower to Upper Case Using Library Function}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Lower to Upper Case Using Library Function}]
+#include<stdio.h>
+int main()
+{
+    char lower,upper;
+    printf("Enter Any Lowercase Letter: ");
+    scanf("%c",&lower);
+    upper=toupper(lower);
+    printf("Uppercase Letter = %c",upper);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Upper Case to Lower Case Using Library Function}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Upper Case to Lower Case Using Library Function}]
+#include<stdio.h>
+int main()
+{
+    char lower,upper;
+    printf("Enter Any Uppercase Letter: ");
+    scanf("%c",&upper);
+    lower=tolower(upper);
+    printf("Lowercase Letter = %c",lower);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Decimal to Octal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Decimal to Octal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter Any Decimal Number: ");
+    scanf("%d",&number);
+    printf("Octal number = %o",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Octal to Decimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Octal to Decimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter Any Octal Number: ");
+    scanf("%d",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Decimal to HexaDecimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Decimal to HexaDecimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter Any Decimal Number: ");
+    scanf("%d",&number);
+    printf("HexaDecimal number = %x",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{HexaDecimal to Decimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={HexaDecimal to Decimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter Any HexaDecimal Number: ");
+    scanf("%x",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Octal to HexaDecimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Octal to HexaDecimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any Octal Number: ");
+    scanf("%o",&number);
+    printf("HexaDecimal number = %x",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{HexaDecimal to Octal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={HexaDecimal to Octal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any HexaDecimal Number: ");
+    scanf("%x",&number);
+    printf("Octal number = %o",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Arithmetic Operator Programming Exercises}
+
+
+\subsection{Sum of Two Numbers}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Sum of Two Numbers}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,sum;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&num1,&num2);
+    sum=num1+num2;
+    printf("The Sum is: %d\n",sum);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Sum And Average of Two Numbers}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Sum And Average of Two Numbers}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,sum;
+    float avg;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&num1,&num2);
+    sum=num1+num2;
+    printf("The Sum is: %d\n",sum);
+    avg=(float)sum/2;		//Typecasting
+    printf("The Average is: %f\n",avg);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{All Arithmetic Operators}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={All Arithmetic Operators}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&num1,&num2);
+    int sum=num1+num2;
+    printf("The Sum is: %d\n",sum);
+    int sub=num1-num2;
+    printf("The Sub is: %d\n",sub);
+    int mul=num1*num2;
+    printf("The Mul is: %d\n",mul);
+    double div=(float)num1/num2;	// Typecasting
+    printf("The Div is: %lf\n",div);
+    int rem=num1%num2;
+    printf("The Rem is: %d\n",rem);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Sum of Three Numbers}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Sum of Three Numbers}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3,sum;
+    printf("Enter Three Numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    sum=num1+num2+num3;
+    printf("The Sum is: %d\n",sum);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Sum And Average of Three Numbers}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Sum And Average of Three Numbers}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3,sum;
+    float average;
+    printf("Enter Three Numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    sum=num1+num2+num3;
+    average=(float)sum/3;
+    printf("The Sum is: %d\n",sum);
+    printf("The Average is: %f\n",average);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Triangle}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Triangle}]
+#include<stdio.h>
+int main()
+{
+    float base,height,area;
+    printf("Enter Base: ");
+    scanf("%f",&base);
+    printf("Enter Height: ");
+    scanf("%f",&height);
+    area=(float)1/2*base*height;
+    printf("The Area is: %f",area);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Triangle}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Triangle}]
+#include<stdio.h>
+int main()
+{
+    float base,height,area;
+    printf("Enter Base: ");
+    scanf("%f",&base);
+    printf("Enter Height: ");
+    scanf("%f",&height);
+    area=0.5*base*height;
+    printf("The Area is: %f",area);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Triangle Using Sides}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Triangle Using Sides}]
+#include<stdio.h>
+int main()
+{
+    float a,b,c,s,area;
+    printf("The Sides of Triangle are: ");
+    scanf("%f %f %f",&a,&b,&c);
+    s=(a+b+c)/2;
+    area=sqrt(s*(s-a)*(s-b)*(s-c));
+    printf("The Area is: %f",area);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Rectangle}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Rectangle}]
+#include<stdio.h>
+int main()
+{
+    float length,width,area;
+    printf("Enter Length: ");
+    scanf("%f",&length);
+    printf("Enter Width: ");
+    scanf("%f",&width);
+    area=length*width;
+    printf("The Area is: %f",area);   
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Circle}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Circle}]
+#include<stdio.h>
+#define PI 3.14159
+int main()
+{
+    float radius,area;
+    printf("Enter Radius: ");
+    scanf("%f",&radius);
+    area=PI*radius*radius;
+    printf("The Area is: %f",area);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Area of Circle Using Math.h}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Area of Circle Using Math.h}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float radius,area;
+    printf("Enter Radius: ");
+    scanf("%f",&radius);
+    area=M_PI*radius*radius;
+    printf("The Area is: %f",area);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Celsius to Fahrenheit}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Celsius to Fahrenheit}]
+#include<stdio.h>
+int main()
+{
+    float C,F;
+    printf("Enter Celsius: ");
+    scanf("%f",&C);
+    F=((9*C/5)+32);
+    printf("Temperature in Fahrenheit is: %f",F);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Fahrenheit to Celsius}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Fahrenheit to Celsius}]
+#include<stdio.h>
+int main()
+{
+    float C,F;
+    printf("Enter Fahrenheit: ");
+    scanf("%f",&F);
+    C=((F-32)*5)/9;
+    printf("Temperature in Celsius is: %f",C);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Number Swap With Temporary Variable}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Number Swap With Temporary Variable}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,temp;
+    printf("Enter Number 01: ");
+    scanf("%d",&num1);
+    printf("Enter Number 02: ");
+    scanf("%d",&num2);
+    temp=num1;
+    num1=num2;
+    num2=temp;
+    printf("Number 01: %d\n",num1);
+    printf("Number 02: %d",num2);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Number Swap Without Temporary Variable}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Number Swap Without Temporary Variable}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter 1st Number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%d",&num2);
+    num1=num1-num2;
+    num2=num1+num2;
+    num1=num2-num1;
+    printf("Number 01: %d\n",num1);
+    printf("Number 02: %d",num2);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Quadratic Formula}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Quadratic Formula}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double a,b,c,D,X1,X2;
+    printf("Enter the Value of a: ");
+    scanf("%lf",&a);
+    printf("Enter the Value of b: ");
+    scanf("%lf",&b);
+    printf("Enter the Value of c: ");
+    scanf("%lf",&c);
+    D=sqrt((b*b)-(4*a*c));
+    X1=(-b+D)/(2*a);
+    X2=(-b-D)/(2*a);
+    printf("The Value of X1: %lf",X1);
+    printf("The Value of X2: %lf",X2);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Mathematical Operator Programming Exercises}
+
+
+\subsection{Value Of Absolute}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Absolute}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int x,result;
+    printf("Enter the Number: ");
+    scanf("%d",&x);
+    result=abs(x);
+    printf("The Value of Absolute: %d",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Square Root}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Square Root}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Number: ");
+    scanf("%lf",&x);
+    result=sqrt(x);
+    printf("The Value of Square Root: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Power}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Power}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int x,y;
+    double result;
+    printf("Enter the Base: ");
+    scanf("%d",&x);
+    printf("Enter the Power: ");
+    scanf("%d",&y);
+    result=pow(x,y);
+    printf("The Result is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Log}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Log}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=log(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Log 10}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Log 10}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=log10(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Exponential Function}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Exponential Function}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=exp(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Sine}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Sine}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=sin(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Cosine}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Cosine}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=cos(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Tangent}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Tangent}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=tan(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Round}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Round}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=round(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Trunc}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Trunc}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=trunc(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Ceiling}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Ceiling}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=ceil(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Value Of Floor}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Value Of Floor}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double x,result;
+    printf("Enter the Value: ");
+    scanf("%lf",&x);
+    result=floor(x);
+    printf("The Answer is: %lf",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Assignment Operator Programming Exercises}
+
+
+\subsection{All Assignment Operators}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={All Assignment Operators}]
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d;
+    printf("Enter the Value of a: ");
+    scanf("%d",&a);
+    printf("Enter the Value of b: ");
+    scanf("%d",&b);
+    printf("Enter the Value of c: ");
+    scanf("%d",&c);
+    printf("Enter the Value of d: ");
+    scanf("%d",&d);
+    a+=2;
+    printf("The Value of += is: %d\n",a);
+    b-=2;
+    printf("The Value of -= is: %d\n",b);
+    c*=2;
+    printf("The Value of *= is: %d\n",c);
+    d/=2;
+    printf("The Value of /= is: %d\n",d);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Unary Plus}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Unary Plus}]
+#include<stdio.h>
+int main()
+{
+    int x,result;
+    printf("Enter the Integer: ");
+    scanf("%d",&x);
+    result=+x;
+    printf("The Unary Value is: %d",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Unary Minus}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Unary Minus}]
+#include<stdio.h>
+int main()
+{
+    int x,result;
+    printf("Enter the Integer: ");
+    scanf("%d",&x);
+    result=-x;
+    printf("The Unary Value is: %d",result);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Prefix Increment}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Prefix Increment}]
+#include<stdio.h>
+int main()
+{
+    int X,Y;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    Y=++X;
+    printf("The Value of X: %d\n",X);
+    printf("The Value of Y: %d",Y)
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Postfix Increment}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Postfix Increment}]
+#include<stdio.h>
+int main()
+{
+    int X,Y;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    Y=X++;
+    printf("The Value of X: %d\n",X);
+    printf("The Value of Y: %d",Y);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Prefix Decrement}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Prefix Decrement}]
+#include<stdio.h>
+int main()
+{
+    int X,Y;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    Y=--X;
+    printf("The Value of X: %d\n",X);
+    printf("The Value of Y: %d",Y);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Postfix Decrement}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Postfix Decrement}]
+#include<stdio.h>
+int main()
+{
+    int X,Y;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    Y=X--;
+    printf("The Value of X: %d\n",X);
+    printf("The Value of Y: %d",Y);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Increment And Decrement}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Increment And Decrement}]
+#include<stdio.h>
+int main()
+{
+    int X;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    printf("The Value of X: %d\n",X++);  // X=X
+    printf("The Value of X: %d\n",X);    // X=X+1
+    printf("The Value of X: %d\n",++X);  // X=X+2
+    printf("The Value of X: %d\n",X);    // X=X+2
+    printf("The Value of X: %d\n",X--);  // X=X+2
+    printf("The Value of X: %d\n",X);    // X=X-1
+    printf("The Value of X: %d\n",--X);  // X=X-2
+    printf("The Value of X: %d\n",X);    // X=X-2
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Increment And Decrement}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Increment And Decrement}]
+#include<stdio.h>
+int main()
+{
+    int X;
+    printf("Enter the Integer: ");
+    scanf("%d",&X);
+    printf("The Value of X: %d\n",X++);  // X=X
+    printf("The Value of X: %d\n",++X);  // X=X+2
+    printf("The Value of X: %d\n",X--);  // X=X+2
+    printf("The Value of X: %d\n",--X);  // X=X
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{If-Else Programming Exercises}
+
+
+\subsection{Even And Odd Using If}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Even And Odd Using If}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter an Integer: ");
+    scanf("%d",&num);
+    if(num%2==0)
+        printf("The Number is Even\n");
+    if(num%2!=0)
+        printf("The Number is Odd\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Even or Odd Using If-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Even or Odd Using If-else}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter an Integer: ");
+    scanf("%d",&num);
+    if(num%2==0)
+        printf("The Number is Even\n");
+    else
+        printf("The Number is Odd\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Positive or Negative Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Positive or Negative Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter an Integer: ");
+    scanf("%d",&num);
+    if(num>0)
+        printf("The Number is Positive\n");
+    else if(num<0)
+        printf("The Number is Negative\n");
+    else
+        printf("The Number is Zero\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Two Numbers Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Two Numbers Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter 1st Number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%d",&num2);
+    if(num1>num2)
+        printf("1st Number is Largest\n");
+    else if(num2>num1)
+        printf("2nd Number is Largest\n");
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Two Numbers Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Two Numbers Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter 1st Number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%d",&num2);
+    if(num1<num2)
+        printf("1st Number is Smallest\n");
+    else if(num2<num1)
+        printf("2nd Number is Smallest\n");
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Grade Marks Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Grade Marks Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    float marks;
+    printf("Enter Your Marks: ");
+    scanf("%f",&marks);
+    if(marks>=93)
+        printf("Your Grade is A");
+    else if(marks>=89)
+        printf("Your Grade is A-");
+    else if(marks>=86)
+        printf("Your Grade is B+");
+    else if(marks>=82)
+        printf("Your Grade is B");
+    else if(marks>=79)
+        printf("Your Grade is B-");
+    else if(marks>=75)
+        printf("Your Grade is C+");
+    else if(marks>=72)
+        printf("Your Grade is C");
+    else if(marks>=69)
+        printf("Your Grade is C-");
+    else if(marks>=65)
+        printf("Your Grade is D+");
+    else if(marks>=60)
+        printf("Your Grade is D");
+    else
+        printf("Your Grade is F");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter a Letter: ");
+    scanf("%c",&ch);
+    if(ch=='a' || ch=='A')
+        printf("%c is Vowel",ch);
+    else if(ch=='e' || ch=='E')
+        printf("%c is Vowel",ch);
+    else if(ch=='i' || ch=='I')
+        printf("%c is Vowel",ch);
+    else if(ch=='o' || ch=='O')
+        printf("%c is Vowel",ch);
+    else if(ch=='u' || ch=='U')
+        printf("%c is Vowel",ch);
+    else
+        printf("%c is Consonant",ch);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using Library Function}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using Library Function}]
+#include<stdio.h>
+int main()
+{
+    char ch,temp;
+    printf("Enter a Letter: ");
+    scanf("%c",&ch);
+    temp=ch;
+    ch=tolower(ch);
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        printf("%c is Vowel",temp);
+    else
+        printf("%c is Consonant",temp);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using Nested If}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using Nested If}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf("%c",&ch);
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z'))
+    {
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' 
+        || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+            printf("'%c' is Vowel.",ch);
+        else
+            printf("'%c' is Consonant.",ch);
+    }
+    else
+    {
+        printf("'%c' is Not an Alphabet.",ch);
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Three Numbers Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Three Numbers Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter Three Numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    if((num1>=num2) && (num1>=num3))
+        printf("Largest Number is: %d\n",num1);
+    else if((num2>=num3) && (num2>=num1))
+        printf("Largest Number is: %d\n",num2);
+    else if((num3>=num1) && (num3>=num2))
+        printf("Largest Number is: %d\n",num3);
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Three Numbers Using If-else if-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Three Numbers Using If-else if-else}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter Three Numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    if((num1<=num2) && (num1<=num3))
+        printf("Smallest Number is: %d\n",num1);
+    else if((num2<=num3) && (num2<=num1))
+        printf("Smallest Number is: %d\n",num2);
+    else if((num3<=num1) && (num3<=num2))
+        printf("Smallest Number is: %d\n",num3);
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Three Numbers Using Nested If}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Three Numbers Using Nested If}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    if(num1>=num2)
+    {
+        if(num1>=num3)
+            printf("%d is the Largest Number",num1);
+        else
+            printf("%d is the Largest Number",num3);
+    }
+    else if(num2>=num3)
+    {
+        if(num2>=num1)
+            printf("%d is the Largest Number",num2);
+        else
+            printf("%d is the Largest Number",num1);
+    }
+    else if(num3>=num1)
+    {
+        if(num3>=num2)
+            printf("%d is the Largest Number",num3);
+        else
+            printf("%d is the Largest Number",num2);
+    }
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Three Numbers Using Nested If}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Three Numbers Using Nested If}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    if(num1<=num2)
+    {
+        if(num1<=num3)
+            printf("%d is the Smallest Number",num1);
+        else
+            printf("%d is the Smallest Number",num3);
+    }
+    else if(num2<=num3)
+    {
+        if(num2<=num1)
+            printf("%d is the Smallest Number",num2);
+        else
+            printf("%d is the Smallest Number",num1);
+    }
+    else if(num3<=num1)
+    {
+        if(num3<=num2)
+            printf("%d is the Smallest Number",num3);
+        else
+            printf("%d is the Smallest Number",num2);
+    }
+    else
+        printf("The Numbers are Equal\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Three Numbers Using Logical Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Three Numbers Using Logical Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter 1st number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd number: ");
+    scanf("%d",&num2);
+    printf("Enter 3rd number: ");
+    scanf("%d",&num3);
+    if(num1>num2 && num1>num3)
+        printf("\n1st Number is Greatest: %d",num1);
+    else if(num2>num1 && num2>num3)
+        printf("\n2nd Number is Greatest: %d",num2);
+    else if(num3>num1 && num3>num2)
+        printf("\n3rd Number is Greatest: %d",num3);
+    else if(num1==num2 && num1>num3)
+        printf("\n1st & 2nd Number is Greatest: %d",num1);
+    else if(num1==num2 && num3>num1)
+        printf("\n3rd Number is Greatest: %d",num3);
+    else if(num2==num3 && num2>num1)
+        printf("\n2nd & 3rd Number is Greatest: %d",num2);
+    else if(num2==num3 && num1>num2)
+        printf("\n1st Number is Greatest: %d",num1);
+    else if(num3==num1 && num3>num2)
+        printf("\n1st & 3rd Number is Greatest: %d",num3);
+    else if(num3==num1 && num2>num3)
+        printf("\n2nd Number is Greatest: %d",num2);
+    else
+        printf("\nNumbers are Equal");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Three Numbers Using Logical Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Three Numbers Using Logical Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3;
+    printf("Enter 1st number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd number: ");
+    scanf("%d",&num2);
+    printf("Enter 3rd number: ");
+    scanf("%d",&num3);
+    if(num1<num2 && num1<num3)
+        printf("\n1st Number is Smallest: %d",num1);
+    else if(num2<num1 && num2<num3)
+        printf("\n2nd Number is Smallest: %d",num2);
+    else if(num3<num1 && num3<num2)
+        printf("\n3rd Number is Smallest: %d",num3);
+    else if(num1==num2 && num1<num3)
+        printf("\n1st & 2nd Number is Smallest: %d",num1);
+    else if(num1==num2 && num3<num1)
+        printf("\n3rd Number is Smallest: %d",num3);
+    else if(num2==num3 && num2<num1)
+        printf("\n2nd & 3rd Number is Smallest: %d",num2);
+    else if(num2==num3 && num1<num2)
+        printf("\n1st Number is Smallest: %d",num1);
+    else if(num3==num1 && num3<num2)
+        printf("\n1st & 3rd Number is Smallest: %d",num3);
+    else if(num3==num1 && num2<num3)
+        printf("\n2nd Number is Smallest: %d",num2);
+    else
+        printf("\nNumbers are Equal");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Find the Coordinate Quadrant Identification}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Find the Coordinate Quadrant Identification}]
+#include<stdio.h>
+int main()
+{
+    int co1,co2;
+    printf("Input the Values for X & Y Coordinate: ");
+    scanf("%d %d",&co1,&co2);
+    if(co1>0 && co2>0)
+        printf("The Coordinate Point (%d,%d) Lies in the First Quadrant\n",co1,co2);
+    else if(co1<0 && co2>0)
+        printf("The Coordinate Point (%d,%d) Lies in the Second Quadrant\n",co1,co2);
+    else if(co1<0 && co2<0)
+        printf("The Coordinate Point (%d,%d) Lies in the Third Quadrant\n",co1,co2);
+    else if(co1>0 && co2<0)
+        printf("The Coordinate Point (%d,%d) Lies in the Fourth Quadrant\n",co1,co2);
+    else
+        printf("The Coordinate Point (%d,%d) Lies in the Origin\n",co1,co2);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Creating a Calculator Using If-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Creating a Calculator Using If-else}]
+#include<stdio.h>
+int main()
+{
+    char oper;
+    float num1,num2;
+    printf("Enter an Operator: +, -, *, /: ");
+    scanf("%c",&oper);
+    printf("Enter 1st Number: ");
+    scanf("%lf",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%lf",&num2);
+    if(op == '+')
+        printf("Addition is: %lf + %lf = %lf\n",num1,num2,num1+num2);
+    else if(op == '-')
+        printf("Subtraction is: %lf - %lf = %lf\n",num1,num2,num1-num2);
+    else if(op == '*')
+        printf("Multiplication is: %lf * %lf = %lf\n",num1,num2,num1*num2);
+    else if((op == '/') && (b!=0))
+        printf("Division is: %lf / %lf = %lf\n",num1,num2,num1/num2);
+    else
+        printf("Invalid Input!!!\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Leap Year}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Leap Year}]
+#include<stdio.h>
+int main()
+{
+    int year;
+    printf("Enter a Year: ");
+    scanf("%d",&year);
+    if(year%400==0)
+        printf("%d is a Leap Year",year);
+    else if((year%4==0) && (year%100!=0))
+        printf("%d is a Leap Year",year);
+    else
+        printf("%d is not a Leap Year",year);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Leap Year Using Logical Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Leap Year Using Logical Operator}]
+#include<stdio.h>
+int main()
+{
+    int year;
+    printf("Enter a Year: ");
+    scanf("%d",&year);
+    if(((year%4==0) && (year%100!=0)) || (year%400==0))
+        printf("%d is a Leap Year",year);
+    else
+        printf("%d is not a Leap Year",year);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Uppercase or Lowercase}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Uppercase or Lowercase}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter a Character: ");
+    scanf("%c",&ch);
+    if((ch>='A') && (ch<='Z'))
+        printf("%c is a Uppercase Letter",ch);
+    else if((ch>='a') && (ch<='z'))
+        printf("%c is a Lowercase Letter",ch);
+    else
+        printf("%c is not a Letter",ch);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Uppercase or Lowercase Using Function}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Uppercase or Lowercase Using Function}]
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf("%c",&ch);
+    if(isupper(ch))
+        printf("'%c' is Uppercase Alphabet.",ch);
+    else if(islower(ch))
+        printf("'%c' is Lowercase Alphabet.",ch);
+    else
+        printf("'%c' is Not an Alphabet.",ch);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Triangle is Valid or Not if Angles Are Given}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Triangle is Valid or Not if Angles Are Given}]
+#include<stdio.h>
+int main()
+{
+    int angle1,angle2,angle3,sum;
+    printf("Enter Three Angles of Triangle: ");
+    scanf("%d %d %d",&angle1,&angle2,&angle3);
+    sum=angle1+angle2+angle3;
+    if((sum==180) && (angle1>0) && (angle2>0) && (angle3>0))
+    {
+        printf("Triangle is Valid.");
+    }
+    else
+    {
+        printf("Triangle is Not Valid.");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Triangle is Valid or Not if Sides Are Given}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Triangle is Valid or Not if Sides Are Given}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3;
+    printf("Enter Three Sides of Triangle: ");
+    scanf("%d %d %d",&side1,&side2,&side3);
+    if((side1+side2)>side3)
+    {
+        if((side2+side3)>side1)
+        {
+            if((side1+side3)>side2)
+            {
+                printf("Triangle is Valid.");
+            }
+            else
+            {
+                printf("Triangle is Not Valid.");
+            }
+        }
+        else
+        {
+            printf("Triangle is Not Valid.");
+        }
+    }
+    else
+    {
+        printf("Triangle is Not Valid.");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Triangle is Valid or Not if Sides Are Given Using Logical Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Triangle is Valid or Not if Sides Are Given Using Logical Operator}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3;
+    printf("Enter Three Sides of Triangle: ");
+    scanf("%d %d %d",&side1,&side2,&side3);
+    if(((side1+side2)>side3) && ((side2+side3)>side1) && ((side3+side1)>side2))
+    {
+        printf("Triangle is valid.");
+    }
+    else
+    {
+        printf("Triangle is not valid.");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check a Triangle is Equilateral, Scalene or Isosceles}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check a Triangle is Equilateral, Scalene or Isosceles}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3;
+    printf("Enter Three Sides of Triangle: ");
+    scanf("%d %d %d",&side1,&side2,&side3);
+    if((side1==side2) && (side2==side3)) 
+    {
+        printf("Equilateral triangle.");
+    }
+    else if((side1==side2) || (side1==side3) || (side2==side3)) 
+    {
+        printf("Isosceles triangle.");
+    }
+    else 
+    {
+        printf("Scalene triangle.");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check a Triangle is Acute, Obtuse or Right-angled}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check a Triangle is Acute, Obtuse or Right-angled}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3;
+    printf("Enter Three Sides: ");
+    scanf("%d %d %d",&side1,&side2,&side3);
+    if(((side1+side2)>side3) && ((side2+side3)>side1) && ((side3+side1)>side2))
+    {
+        int a=(side1*side1),b=(side2*side2),c=(side3*side3);
+        if(((a+b) == c) || ((b+c) == a) || ((a+c) == b))
+            printf("Right-angled\n");
+        else if(((a+b) > c) && ((b+c) > a) && ((a+c) > b))
+            printf("Acute\n");
+        else
+            printf("Obtuse\n");
+    }
+    else
+        printf("Not a triangle\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Find The Type of Quadrilateral Based on Sides & Angles}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Find The Type of Quadrilateral Based on Sides & Angles}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3,side4,angle;
+    printf("Enter Four Sides: ");
+    scanf("%d %d %d %d",&side1,&side2,&side3,&side4);
+    printf("Enter Angle: ");
+    scanf("%d",&angle);
+    if((side1 == side2) && (side2 == side3) && (side3 == side4))
+    {
+        if(angle == 90)
+            printf("Square\n");
+        else
+            printf("Rhombus\n");
+    }
+    else if((side1 == side3) && (side2 == side4))
+    {
+        if(angle == 90)
+            printf("Rectangle\n");
+        else
+            printf("Parallelogram\n");
+    }
+    else
+        printf("Quadrilateral\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check a Date is Valid}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check a Date is Valid}]
+#include<stdio.h>
+int main()
+{
+    int day,month,year;
+    printf("Enter Date: ");
+    scanf("%d",&day);
+    printf("Enter Month: ");
+    scanf("%d",&month);
+    printf("Enter Year: ");
+    scanf("%d",&year);
+    if((month >= 1) && (month <= 12) && (year > 0))
+    {
+        if(month == 2)
+        {
+            if(((year%4 == 0) && (year%100 != 0)) || (year%400 == 0))
+            {
+                if((day >= 1) && (day <= 29))
+                    printf("Valid Date\n");
+                else
+                    printf("Invalid Date\n");
+            }
+            else
+            {
+                if((day >= 1) && (day <= 28))
+                    printf("Valid Date\n");
+                else
+                    printf("Invalid Date\n");
+            }
+        }
+        else if((month == 4) || (month == 6) || (month == 9) || (month == 11))
+        {
+            if((day >= 1) && (day <= 30))
+                printf("Valid Date\n");
+            else
+                printf("Invalid Date\n");
+        }
+        else
+        {
+            if((day >= 1) && (day <= 31))
+                printf("Valid Date\n");
+            else
+                printf("Invalid Date\n");
+        }
+    }
+    else
+        printf("Invalid Date\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Alphabet, Digit or Special Character}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Alphabet, Digit or Special Character}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf("%c",&ch);
+    if((ch>='a' && ch<='z') || (ch>='A' && ch<='Z'))
+    {
+        printf("'%c' is Alphabet.",ch);
+    }
+    else if(ch>='0' && ch<='9')
+    {
+        printf("'%c' is Digit.",ch);
+    }
+    else
+    {
+        printf("'%c' is Special Character.",ch);
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Alphabet, Digit or Special Character Using ASCII}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Alphabet, Digit or Special Character Using ASCII}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf("%c",&ch);
+    if((ch>=97 && ch<=122) || (ch>=65 && ch<=90))
+    {
+        printf("'%c' is Alphabet.",ch);
+    }
+    else if(ch>=48 && ch<=57)
+    {
+        printf("'%c' is Digit.",ch);
+    }
+    else
+    {
+        printf("'%c' is Special Character.",ch);
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Print Day Name of Week}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Print Day Name of Week}]
+#include<stdio.h>
+int main()
+{
+    int week;
+    printf("Enter Week Number (1-7): ");
+    scanf("%d",&week);
+    if(week == 1)
+        printf("Monday");
+    else if(week == 2)
+        printf("Tuesday");
+    else if(week == 3)
+        printf("Wednesday");
+    else if(week == 4)
+        printf("Thursday");
+    else if(week == 5)
+        printf("Friday");
+    else if(week == 6)
+        printf("Saturday");
+    else if(week == 7)
+        printf("Sunday");
+    else
+        printf("Invalid Input!!!");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Print Days in a Month}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Print Days in a Month}]
+#include<stdio.h>
+int main()
+{
+    int month;
+    printf("Enter Month Number (1-12): ");
+    scanf("%d",&month);
+    if(month==1 || month==3 || month==5 || month==7 
+       || month==8 || month==10 || month==12)
+    {
+        printf("31 days");
+    }
+    else if(month==4 || month==6 || month==9 || month==11)
+    {
+        printf("30 days");
+    }
+    else if(month==2)
+    {
+        printf("28 or 29 days");
+    }
+    else
+    {
+        printf("Invalid Input!!!");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Find Roots of Quadratic Equation Using If-else}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Find Roots of Quadratic Equation Using If-else}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float a,b,c,Dis,X1,X2,Ima;
+    printf("Enter Values of a, b, c: ");
+    scanf("%f %f %f",&a,&b,&c);
+    Dis=(b*b)-(4*a*c);
+    if(Dis>0)
+    {
+        X1=(-b+sqrt(Dis))/(2*a);
+        X2=(-b-sqrt(Dis))/(2*a);
+        printf("Two Distinct & Real Roots Exists: %.2f and %.2f",X1,X2);
+    }
+    else if(Dis==0)
+    {
+        X1=X2=-b/(2*a);
+        printf("Two Equal & Real Roots Exists: %.2f and %.2f",X1,X2);
+    }
+    else if(Dis<0)
+    {
+        X1=X2=-b/(2*a);
+        Ima=sqrt(-Dis)/(2*a);
+        printf("Two Distinct Complex Roots Exists: %.2f + %.2fi and %.2f - %.2fi",X1,Ima,X2,Ima);
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Calculate Profit or Loss}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Calculate Profit or Loss}]
+#include<stdio.h>
+int main()
+ 
+{
+    int CP,SP,Amount;
+    printf("Enter Cost Price: ");
+    scanf("%d",&CP);
+    printf("Enter Selling Price: ");
+    scanf("%d",&SP);
+    if(SP>CP)
+    {
+        Amount=SP-CP;
+        printf("\nProfit = %d",Amount);
+    }
+    else if(CP>SP)
+    {
+        Amount=CP-SP;
+        printf("\nLoss = %d",Amount);
+    }
+    else
+    {
+        printf("\nNo Profit & Loss.");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Count Total Number of Notes in Amount}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Count Total Number of Notes in Amount}]
+#include<stdio.h>
+int main()
+{
+    int amount;
+    int note500,note100,note50,note20,note10,note5,note2,note1;
+    note500=note100=note50=note20=note10=note5=note2=note1=0;
+    printf("Enter Amount: ");
+    scanf("%d",&amount);
+ 
+    printf("\nTotal Number of Notes:\n");
+    printf("``````````````````````\n");
+    if(amount>=500){
+        note500 = amount/500;
+        amount -= (note500*500);
+        printf("Note of 500: %d\n",note500);
+    }
+    if(amount>=100){
+        note100 = amount/100;
+        amount -= (note100*100);
+        printf("Note of 100: %d\n",note100);
+    }
+    if(amount>=50){
+        note50 = amount/50;
+        amount -= (note50*50);
+        printf("Note of 50: %d\n",note50);
+    }
+    if(amount>=20){
+        note20 = amount/20;
+        amount -= (note20*20);
+        printf("Note of 20: %d\n",note20);
+    }
+    if(amount>=10){
+        note10 = amount/10;
+        amount -= (note10*10);
+        printf("Note of 10: %d\n",note10);
+    }
+    if(amount>=5){
+        note5 = amount/5;
+        amount -= (note5*5);
+        printf("Note of 5: %d\n",note5);
+    }
+    if(amount>=2){
+        note2 = amount/2;
+        amount -= (note2*2);
+        printf("Note of 2: %d\n",note2);
+    }
+    if(amount>=1){
+        note1 = amount;
+        printf("Note of 1: %d\n",note1);
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Grading System Using Logical Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Grading System Using Logical Operator}]
+#include<stdio.h>
+int main()
+{
+    int mark;
+    printf("Enter Mark: ");
+    scanf("%d",&mark);
+    if(mark>100 || mark<0)
+        printf("Invalid Mark!!!");
+    else if(mark>=80 && mark<=100)
+        printf("Your Grade is A+ & Number: %d",mark);
+    else if(mark>=70 && mark<=79)
+        printf("Your Grade is A & Number: %d",mark);
+    else if(mark>=60 && mark<=69)
+        printf("Your Grade is A- & Number: %d",mark);
+    else if(mark>=50 && mark<=59)
+        printf("Your Grade is B & Number: %d",mark);
+    else if(mark>=40 && mark<=49)
+        printf("Your Grade is C & Number: %d",mark);
+    else if(mark>=33 && mark<=39)
+        printf("Your Grade is D & Number: %d",mark);
+    else
+        printf("Your Grade is F & Number: %d",mark);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Switch Programming Exercises}
+
+
+\subsection{Print Digit From 0-9 Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Print Digit From 0-9 Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int digit;
+    printf("Enter a Digit: ");
+    scanf("%d",&digit);
+    switch(digit)
+    {
+    case 0:
+        printf("Number Is Zero");
+        break;
+    case 1:
+        printf("Number Is One");
+        break;
+    case 2:
+        printf("Number Is Two");
+        break;
+    case 3:
+        printf("Number Is Three");
+        break;
+ 
+   
+    case 4:
+        printf("Number Is Four");
+        break;
+    case 5:
+        printf("Number Is Five");
+        break;
+    case 6:
+        printf("Number Is Six");
+        break;
+    case 7:
+        printf("Number Is Seven");
+        break;
+    case 8:
+        printf("Number Is Eight");
+        break;
+    case 9:
+        printf("Number Is Nine");
+        break;
+    default:
+        printf("Number Is Not Valid");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using Switch}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter a Character: ");
+    scanf("%c",&ch);
+    switch(ch)
+    {
+    case 'a':
+        printf("This is a Vowel");
+        break;
+    case 'e':
+        printf("This is a Vowel");
+        break;
+    case 'i':
+        printf("This is a Vowel");
+        break;
+    case 'o':
+        printf("This is a Vowel");
+        break;
+    case 'u':
+        printf("This is a Vowel");
+        break;
+    case 'A':
+        printf("This is a Vowel");
+        break;
+    case 'E':
+        printf("This is a Vowel");
+        break;
+    case 'I':
+        printf("This is a Vowel");
+        break;
+    case 'O':
+        printf("This is a Vowel");
+        break;
+    case 'U':
+        printf("This is a Vowel");
+        break;
+    default:
+        printf("This is a Consonant");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using Switch}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter a Character: ");
+    scanf("%c",&ch);
+    switch(ch)
+    {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'A':
+    case 'E':
+    case 'I':
+    case 'O':
+    case 'U':
+        printf("This is a Vowel");
+        break;
+    default:
+        printf("This is a Consonant");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Menu Based Temperature Conversion Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Menu Based Temperature Conversion Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int choice;
+    float Temp,ConvertedTemp;
+    printf("Temperature Conversion Menu\n");
+    printf("1. Fahrenheit to Celsius\n");
+    printf("2. Celsius to Fahrenheit\n");
+    printf("Enter Your Choice: ");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+    case 1:
+        {
+            printf("Enter the Fahrenheit Temperature: ");
+            scanf("%f",&Temp);
+            ConvertedTemp=((Temp-32)*5)/9;
+            printf("The Temperature in Celsius: %f\n",ConvertedTemp);
+            break;
+        }
+    case 2:
+        {
+            printf("Enter the Celsius Temperature: ");
+            scanf("%f",&Temp);
+            ConvertedTemp=(9*Temp/5)+32;
+            printf("The Temperature in Fahrenheit: %f\n",ConvertedTemp);
+            break;
+        }
+    default:
+        printf("Invalid Choice");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Creating a Calculator Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Creating a Calculator Using Switch}]
+#include<stdio.h>
+int main()
+{
+    double num1,num2;
+    char oper;
+    printf("Enter an Operator: +, -, *, /: ");
+    scanf("%c",&oper);
+    printf("Enter 1st Number: ");
+    scanf("%lf",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%lf",&num2);
+    switch(oper)
+    {
+    case '+':
+        {
+            printf("Addition is: %lf + %lf = %lf\n",num1,num2,num1+num2);
+            break;
+        }
+    case '-':
+        {
+            printf("Subtraction is: %lf - %lf = %lf\n",num1,num2,num1-num2);
+            break;
+        }
+    case '*':
+        {
+            printf("Multiplication is: %lf * %lf = %lf\n",num1,num2,num1*num2);
+            break;
+        }
+    case '/':
+        {
+            printf("Division is: %lf / %lf = %lf\n",num1,num2,num1/num2);
+            break;
+        }
+    default:
+        printf("Not a Valid Character\n");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Creating a Calculator Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Creating a Calculator Using Switch}]
+#include <stdio.h>
+int main()
+{
+    double num1,num2,result;
+    char oper;
+    printf("Enter an Operator: +, -, *, /: ");
+    scanf("%c",&oper);
+    printf("Enter 1st Number: ");
+    scanf("%lf",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%lf",&num2);
+    switch(oper)
+    {
+        case '+':
+            result=num1+num2;
+            printf("Addition is: %lf + %lf = %lf\n",num1,num2,result);
+            break;
+        case '-':
+            result=num1-num2;
+            printf("Subtraction is: %lf + %lf = %lf\n",num1,num2,result);
+            break;
+        case '*':
+            result=num1*num2;
+            printf("Multiplication is: %lf + %lf = %lf\n",num1,num2,result);
+            break;
+        case '/':
+            if(num2!=0)
+            {
+                result=num1/num2;
+                printf("Division is: %lf + %lf = %lf\n",num1,num2,result);
+            }
+            else
+            {
+                printf("Error!!!\n");
+            }
+            break;
+        default:
+            printf("Invalid operator!!!\n");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Even or Odd Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Even or Odd Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter Any Number: ");
+    scanf("%d",&num);
+    switch(num%2)
+    {
+        case 0:
+            printf("%d is Even",num);
+            break;
+        case 1:
+            printf("%d is Odd",num);
+            break;
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Find Roots of Quadratic Equation Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Find Roots of Quadratic Equation Using Switch}]
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float a,b,c,Dis,X1,X2,Ima;
+    printf("Enter Values of a, b, c: ");
+    scanf("%f %f %f",&a,&b,&c);
+    Dis=(b*b)-(4*a*c);
+    switch(Dis>0)
+    {
+        case 1:
+            X1=(-b+sqrt(Dis))/(2*a);
+            X2=(-b-sqrt(Dis))/(2*a);
+            printf("Two Distinct & Real Roots Exists: %.2f and %.2f",X1,X2);
+            break;
+        case 0:
+            switch(Dis<0)
+            {
+                case 1:
+                    X1=X2=-b/(2*a);
+                    Ima=sqrt(-Dis)/(2*a);
+                    printf("Two Distinct Complex Roots Exists: %.2f + %.2fi and %.2f - %.2fi",X1,Ima,X2,Ima);
+                    break;
+                case 0:
+                    X1=X2=-b/(2*a);
+                    printf("Two Equal & Real Roots Exists: %.2f and %.2f",X1,X2);
+                    break;
+            }
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Check Positive, Negative or Zero Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Check Positive, Negative or Zero Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter Any Number: ");
+    scanf("%d",&num);
+    switch(num>0)
+ 
+    {
+        case 1:
+            printf("%d is Positive.",num);
+        break;
+        case 0:
+            switch(num<0)
+            {
+                case 1:
+                    printf("%d is Negative.",num);
+                    break;
+                case 0:
+                    printf("%d is Zero.",num);
+                    break;
+            }
+        break;
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Print Number of Days in a Month Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Print Number of Days in a Month Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int month;
+    printf("Enter Month: ");
+    scanf("%d",&month);
+    switch(month)
+    {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            printf("31 days");
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            printf("30 days");
+            break;
+        case 2:
+            printf("28/29 days");
+            break;
+        default:
+            printf("Invalid Input!!!");
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Grading System Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Grading System Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int marks;
+    printf("Enter Your Marks: ");
+    scanf("%d",&marks);
+    if(marks>100 || marks<0)
+        printf("Invalid Marks!!!");
+    else
+    {
+        switch(marks/10)
+        {
+        case 10:
+        case 9:
+            printf("\nYour Grade is: A");
+            break;
+        case 8:
+            printf("\nYour Grade is: B" );
+            break;
+        case 7:
+            printf("\nYour Grade is: C" );
+            break;
+        case 6:
+            printf("\nYour Grade is: D" );
+            break;
+        case 5:
+            printf("\nYour Grade is: E" );
+            break;
+        case 4:
+            printf("\nYour Grade is: E-");
+            break;
+        default:
+            printf("\nYour Grade is: F");
+        }
+    }
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Two Numbers Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Two Numbers Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&num1,&num2);
+    switch(num1>num2)
+    {
+        case 0:
+            printf("%d is Largest",num2);
+            break;
+        case 1:
+            printf("%d is Largest",num1);
+            break;
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Two Numbers Using Switch}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Two Numbers Using Switch}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    printf("Enter Two Numbers: ");
+    scanf("%d %d",&num1,&num2);
+    switch(num1<num2)
+    {
+        case 0:
+            printf("%d is Smallest",num2);
+            break;
+        case 1:
+            printf("%d is Smallest",num1);
+            break;
+    }
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Conditional Operator Programming Exercises}
+
+
+\subsection{Largest of Two Numbers Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Two Numbers Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,max;
+    printf("Enter 1st Number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%d",&num2);
+    max = (num1>num2)?num1:num2;
+    printf("Largest Between %d & %d is %d\n",num1,num2,max);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Two Numbers Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Two Numbers Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,min;
+    printf("Enter 1st Number: ");
+    scanf("%d",&num1);
+    printf("Enter 2nd Number: ");
+    scanf("%d",&num2);
+    min = (num1<num2)?num1:num2;
+    printf("Smallest Between %d & %d is %d\n",num1,num2,min);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Largest of Three Numbers Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Largest of Three Numbers Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3,max;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    max = ((num1>num2) && (num1>num3)) ? num1 : ((num2>num3) ? num2 : num3);
+    printf("\nLargest Between %d, %d & %d is %d",num1,num2,num3,max);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Smallest of Three Numbers Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Smallest of Three Numbers Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num1,num2,num3,min;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    min = ((num1<num2) && (num1<num3)) ? num1 : ((num2<num3) ? num2 : num3);
+    printf("\nSmallest Between %d, %d & %d is %d",num1,num2,num3,min);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Even or Odd Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Even or Odd Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter Any Number: ");
+    scanf("%d",&num);
+    (num%2==0) ? printf("%d is Even",num) : printf("%d is Odd",num);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Leap Year Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Leap Year Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int year;
+    printf("Enter Any Year: ");
+    scanf("%d",&year);
+    ((year%4==0) && (year%100!=0)) ? printf("%d is a Leap Year",year) : 
+        ((year%400==0) ? printf("%d is a Leap Year",year) : 
+            printf("%d is a Not Leap Year",year));
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Leap Year Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Leap Year Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int year;
+    printf("Enter Any Year: ");
+    scanf("%d",&year);
+    printf("%s",(((year%4==0) && (year%100!=0)) ? "Leap Year" : 
+                 ((year%400==0) ? "Leap Year" : "Not Leap Year")));
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Alphabet Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Alphabet Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf("%c",&ch);
+    ((ch>='a' && ch<='z') || (ch>='A' && ch<='Z')) ? 
+        printf("%c is a Alphabet",ch) : printf("%c is Not a Alphabet",ch);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Positive, Negative or Zero Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Positive, Negative or Zero Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter Any Number: ");
+    scanf("%d",&num);
+    (num>0) ? printf("The Number is Positive\n") : (num<0) ? 
+        printf("The Number is Negative\n") : printf("The Number is Zero\n");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Vowel Consonant Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Vowel Consonant Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("Enter Any Character: ");
+    scanf(" %c",&ch);
+    (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+     ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') ? 
+            printf("It is a Vowel") : printf("It is a consonant");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Coordinate Quadrant Identification Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Coordinate Quadrant Identification Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int x,y;
+    printf("Input the Values for X & Y Coordinate: ");
+    scanf("%d %d",&x,&y);
+    ((x==0) || (y==0)) ? printf("Lies in the Origin") : (x>0) ? 
+            ((y>0) ? printf("First quadrant") : printf("Fourth quadrant")) : 
+                    ((y>0) ? printf("Second quadrant") : printf("Third quadrant"));
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Triangle is Valid or Not if Sides Are Given Using Conditional Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Triangle is Valid or Not if Sides Are Given Using Conditional Operator}]
+#include<stdio.h>
+int main()
+{
+    int side1,side2,side3;
+    printf("Enter Three Sides: ");
+    scanf("%d %d %d",&side1,&side2,&side3);
+    (((side1+side2)>side3) && ((side2+side3)>side1) && ((side1+side3)>side2)) ? 
+            printf("The Triangle is Valid") : printf("The Triangle is Not Valid");
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+
+\section{Bitwise Operator Programming Exercises}
+
+
+\subsectionConvert Decimal to Binary Using Bitwise Operator}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Convert Decimal to Binary Using Bitwise Operator}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any Octal Number: ");
+    scanf("%d",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Octal to Decimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Octal to Decimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any Octal Number: ");
+    scanf("%d",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Octal to Decimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Octal to Decimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any Octal Number: ");
+    scanf("%d",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Octal to Decimal}
+\vspace{0.5cm}
+\begin{lstlisting}[caption={Octal to Decimal}]
+#include<stdio.h>
+int main()
+{
+    int number;
+    printf("Enter any Octal Number: ");
+    scanf("%d",&number);
+    printf("Decimal number = %d",number);
+    return 0;
+}
+\end{lstlisting}
+\newpage
+
+\end{document}
